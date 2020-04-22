@@ -1,0 +1,51 @@
+
+//roate
+@keyframes rotate
+    from 
+        transform: rotate(0deg)
+    to
+        transform: rotate(359deg)
+
+//moving stateChange anim
+@keyframes stateChange
+    0%
+        transform: translate(0) rotate(0deg)
+    20%
+        transform: translate(-73px,1px) rotate(-36deg)
+    40%
+        transform: translate(-141px,-72px) rotate(-72deg)
+    60%
+        transform: translate(-83px,-122px) rotate(-108deg)
+    80%
+        transform: translate(40px,-72px) rotate(-144deg)
+    to
+        transform: translate(0) rotate(0deg)
+
+
+//scale up down..
+@keyframes scale
+
+    0%
+        transform: scale(.6)
+    50%
+        transform: scale(.8)
+    to
+        transform: scale(.6)
+
+
+        
+//scaleFade  
+@keyframes scaleFade
+    from
+        opacity: 1
+        transform: scale(0)
+
+    to
+        opacity: 0
+        transform: scale(2.5)
+//stroke
+@keyframes strokeAnim
+    from
+        stroke-dasharray: 20
+    to
+        stroke-dasharray: 200

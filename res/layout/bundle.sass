@@ -1,0 +1,911 @@
+/***
+ *
+ * @bundle
+ * This is the main stylesheet for this website
+ * :: DO NOT CHANGE ::
+ *
+ * @author Md Tahazzot
+ * @date april 18, 2020
+ * @type CSS File
+ * @comment
+ * Ability to use it, I just remomended to do not copy
+ * this file for your personal project. We always do the best things for
+ * our code...
+ *
+ */
+
+
+/**
+ *
+ * @include
+ * we need a lot of src file to compile this main file
+ * we did like to call them :)
+ */
+
+@import ../src/colors
+@import ../src/fonts
+@import ../src/mixin
+@import ../src/store
+@import ../src/animation
+
+// @import ../src/grid :: we will call it in our primary stylesheet..
+
+*,
+*::before,
+*::after
+    box-sizing: border-box
+
+
+// z-index
+.navigation-top
+    z-index: 10001
+
+
+//universal classess
+.fancy-btn
+    color: #212121
+    border: 1px solid $border-color
+    background-color: transparent
+    padding: .5rem 2rem
+    text-align: center
+    cursor: pointer
+
+    &:focus
+        outline: 0
+
+//navbar
+.navigation-top
+    position: absolute
+    width: 100%
+    top: 0
+    left: 0
+    padding: 1.5rem 0
+
+    &.fixed,
+    &.active
+        transition: .3s
+        position: fixed
+        background-color: #fff
+        box-shadow: -3px 4px 12px #f1f1f18c
+
+        
+        .navbar-wrapper
+            .navbar-list
+
+                a
+                    color: #787a91
+
+                    &::before
+                        background-color: rgb(50, 151, 247)
+
+                    &.active
+                        &::before
+                            background-color: rgb(50, 151, 247)
+                
+                    &.active
+                        color: rgb(50, 151, 247)
+        
+        .fancy-btn-wrapper
+            .fancy-btn-navbar
+                color: #0873ff
+                border-color: #0873ff
+
+
+    .navbar-wrapper
+        display: flex
+        align-items: center
+        justify-content: flex-end
+
+        .navbar-list
+            display: flex
+            padding-left: 0
+            margin-top: 0
+            margin-bottom: 0
+            list-style-type: none
+
+            a
+                color: #e7e7e7
+                display: block
+                padding: .48rem 1.5rem
+                text-align: center
+                text-transform: uppercase
+                margin-left: .15rem
+                margin-right: .15rem
+                position: relative
+
+                &::before
+                    content: ""
+                    position: absolute
+                    left: 0
+                    bottom: 0
+                    height: 2px
+                    width: 0%
+                    background-color: #fff
+                    transition: all 0.3s linear
+
+                &.active
+                    &::before
+                        width: 70%
+                        background-color: #ffe5bd
+            
+                &:hover
+                    text-decoration: none
+                
+                &.active
+                    color: #ffe5bd
+
+                &:hover::before
+                    width: 70%
+    
+    .fancy-btn-wrapper
+        .fancy-btn-navbar
+            color: #fff
+            border-radius: .25rem
+            cursor: pointer
+
+
+
+//landing page
+.land-wrapper
+    position: relative
+
+    >.land-inner
+        padding-top: 180px
+
+        .meta-text-manage
+            h3
+                color: #212121
+                margin-bottom: 0
+                margin-top: 0
+            h1
+                margin-top: 0
+                margin-bottom: 0
+                font-size: 3.5rem
+                color: #525d6b
+
+            p   
+                margin-top: 0
+                font-size: 1.3rem
+
+            .fancy-btn
+                font-weight: bold
+                border: none
+                padding: .75rem 1.8rem
+                color: #fff
+                background-size: 300% 100%
+                border-radius: 50px
+                background-image: linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed)
+                box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75)
+                transition: all .4s ease-in-out
+
+                &:focus
+                    outline: none
+
+                &:hover 
+                    background-position: 100% 0
+
+
+
+
+        .reading-books
+            position: relative
+            top: -71px
+
+            img
+                display: block
+                width: 100%
+                max-width: 300px
+                margin-left: auto
+                    
+
+
+
+.landing-background-wrapper
+    position: absolute
+    width: 100%
+    height: 100%
+    left: 0
+    top: 0
+    right: 0
+    z-index: -1
+
+    &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        height: 100%
+        width: 100%
+        z-index: 0
+
+    .landing-background
+        img 
+            width: 100%
+
+    .fly
+        position: absolute
+        
+    .fly-one
+        top: 100px
+        left: 5%
+        animation-name: rotate
+        animation-duration: 15s
+        animation-timing-function: linear
+        animation-iteration-count: infinite
+        
+        
+    
+    .fly-two
+        left: 35%
+        top: 380px
+        animation-name: stateChange
+        animation-duration: 20s
+        animation-timing-function: linear
+        animation-iteration-count: infinite
+
+    .fly-three
+        bottom: 100px
+        left: 10%
+        animation-name: scale
+        animation-duration: 10s
+        animation-timing-function: linear
+        animation-iteration-count: infinite
+
+    .fly-four
+        top: 45%
+        left: 30%
+        animation-name: scale
+        animation-duration: 3s
+        animation-timing-function: linear
+        animation-iteration-count: infinite
+
+    .fly-five
+        left: -100px
+
+    .flying
+        transition: .3s
+        left: 0
+        transform: perspective(500px)  translate3d(20px, -150px, 20px)
+
+
+//memory section
+.app-view
+    padding-top: 7rem
+
+.memory-section
+    position: relative
+
+    .font-face-info
+        position: absolute
+        top: -30px
+        left: -30px
+        padding: 2rem
+        background-color: #6542ff
+        color: #fff
+        max-width: 250px
+        z-index: 1
+
+        p
+            font-size: 90%
+
+        h1
+            margin-top: .5rem
+            font-family: "Default"
+            font-size: 1.2rem
+            color: #fff
+
+    .back-face-photo
+        img
+            width: 100%
+            max-width: 350px
+            display: block
+            margin-left: auto
+            margin-right: auto
+
+.welcome-to-my-business
+
+    h1 
+        font-family: "Default"
+        font-size: 1.8rem
+        margin-top: 0
+
+    ul.work-list
+        margin-top: 2rem
+        padding-left: 0
+        list-style-type: none
+
+        li
+            
+            i
+                color: #007bff
+                margin-right: .5rem
+            span
+                color: #212121
+    
+    .fancy-btn
+        font-weight: bold
+        border: none
+        padding: .75rem 1.8rem
+        color: #fff
+        background-size: 300% 100%
+        border-radius: 50px
+        background-image: linear-gradient(to right, #7625e1, #a844eb, #4952c9, #6199ec)
+        transition: all .4s ease-in-out
+
+        &:focus
+            outline: none
+
+            &:hover
+                background-position: 100% 0
+
+
+//service
+.service
+    padding-top: 3rem
+
+.service-title
+    margin-bottom: 2rem
+    font-size: 1.4rem
+    text-align: center
+
+    svg  path
+        stroke-dasharray: 20
+        animation: strokeAnim 5s linear infinite
+
+.service-card
+    padding: 2rem 1.5rem
+    box-shadow: 0 0 12px #f1f1f1
+    min-height: 350px
+    margin-top: 1rem
+    margin-bottom: 1rem
+
+    &:hover .icon::before
+        border-color: $primary
+        transform: scale(.85)
+
+    .icon
+        height: 70px
+        width: 70px
+        margin-bottom: 1rem
+        margin-left: auto
+        margin-right: auto
+        border: 1px solid #e0e0e0
+        text-align: center
+        transform: rotate(45deg)
+        cursor: help
+
+        &::before
+            content: ""
+            position: absolute
+            top: 0
+            left: 0
+            height: 100%
+            width: 100%
+            border: 2px solid transparent
+            transition: .3s
+       
+
+        i
+            font-size: 2.5rem
+            line-height: 70px
+            transform: rotate(-45deg)
+
+            &.fa-brush
+                color: $m-orange
+
+            &.fa-wordpress
+                color: $m-primary
+
+            &.fa-bug
+                color: $m-danger
+
+    .service-card-title
+        h1
+            text-align: center
+            font-weight: 500
+            margin-top: 1.5rem
+            margin-bottom: 1rem
+
+    .card-body
+        color: #535353
+
+    .card-btn
+        display: block
+        margin-left: auto
+        margin-right: auto
+        margin-top: 1rem
+        padding: .5rem 1.5rem
+        border: none
+        background-image: linear-gradient(45deg, #0672ff, #1ebfff, #573ec7)
+        color: #fff
+        background-size: 200% 100%
+        cursor: help
+
+
+//discussion
+.discussion
+    margin-top: 5rem
+    padding: 5rem 0 10rem
+    background-image: url('../assets/images/solution-bg-discussion.jpg')
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+    position: relative
+
+    &::before
+        content: ""
+        position: absolute
+        top: 0
+        left: 0
+        height: 100%
+        width: 100%
+        background-color: #000000b7
+
+.discussion-info
+    h4
+        color: rgb(250, 112, 112)
+        display: block
+        text-transform: uppercase
+        margin-bottom: 10px
+        font-size: 15px
+        font-weight: 600
+
+    h1.discussion-title
+        color: rgb(255, 255, 255)
+        margin-bottom: 12px
+        font-weight: 700
+        font-size: 50px
+        line-height: 1.2
+        letter-spacing: .16rem
+
+    
+    p
+        color: rgb(232, 227, 227)
+
+    button
+        padding: .8rem 1.8rem
+        color: #fff
+        background-color: #0099ff
+        border-color: #0099ff
+        border-radius: .25rem
+        text-transform: uppercase
+        font-weight: 600
+
+.video-play
+    width: 100%
+    height: 300px
+    text-align: center
+    cursor: pointer
+
+    .video-icon
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        height: 90px
+        width: 90px
+        border-radius: 50%
+        background-color: #fff
+        border: 1px solid #fff
+        text-align: center
+        cursor: pointer
+
+        &::before,
+        &::after
+            content: ""
+            position: absolute
+            top: 0
+            left: 0
+            height: 100%
+            width: 100%
+            border-radius: 50%
+            border: 2px solid rgb(233, 234, 234)
+            animation: scaleFade 2s linear infinite 
+            z-index: -1
+
+        &::before
+            animation-delay: .45s
+
+    svg
+        margin-top: 29px
+        margin-left: 10px
+        transform: scale(1.5)
+
+
+//area -50
+.area-50
+    background-color: #fff
+
+    .negative-row
+        background-color: #fff
+        position: relative
+        top: -80px
+        padding: 1.5rem 1rem
+
+        .unique-column
+            width: 100%
+            display: flex
+            padding: 1rem
+            align-items: flex-start
+            justify-content: space-between
+
+
+        .min-card-ui
+            background-color: #fff
+            box-shadow: 0 0 12px #f5f5f5
+            padding: 1rem
+            flex: 0 0 22%
+            height: 120px
+            text-align: center
+            transition: .3s
+
+            &:hover
+                cursor: pointer
+                transform: translate3d(0, 10px, 10px)
+
+            i.fa,
+            i.fas,
+            i.fab
+                font-size: 2.5rem
+
+                &.fa-chart-line
+                    color: #13bb4b
+
+                &.fa-palette
+                    color: #e4761c
+
+                &.fa-wordpress
+                    color: $primary
+
+                &.fa-bolt
+                    color: #7838cc
+                    
+            h1
+                font-size: 1.3rem
+                font-family: "Default"
+                color: #424c58
+                font-weight: 400
+
+
+    .positive-row
+        position: relative
+        top: -50px
+        padding: 0 1rem
+
+        .review-title
+            width: 100%
+            padding: 0 1rem
+            font-weight: 100
+            margin-top: 0
+            text-align: center
+            display: block
+
+        .review-card
+            position: relative
+            height: 140px
+            margin-top: 2rem
+            margin-bottom: 2rem
+            margin-left: 1rem
+            margin-right: 1rem
+
+        .review-card-title
+            height: 100%
+            box-shadow: 0 0 12px #f5f5f5
+
+            h3
+                margin: 0
+                padding: 2rem
+                font-size: 1.1rem
+                font-weight: 500
+                font-family: "Default"
+                color: #6d6d6d
+
+        .review-card-body
+            height: 70px
+            width: 70px
+            border-radius: 50%
+            overflow: hidden
+            background-color: #fff
+            position: absolute
+            right: 0
+            bottom: -20px
+            box-shadow: 0 0 12px #f5f5f5
+
+            img
+                width: 70px
+                height: 70px
+                
+                
+            
+
+//counting-section
+.counting-section
+    margin-top: 2rem
+    padding: 4rem 0
+    background-image: url('../assets/images/count-bg.jpg')
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+    position: relative
+
+    &::before
+        content: ""
+        position: absolute
+        top: 0
+        left: 0
+        height: 100%
+        width: 100%
+        background-color: rgba(0,0,0, 0.8)
+        z-index: 0
+
+
+    .count-card
+        position: relative
+        z-index: 1
+        color: #fff
+        text-align: center
+
+        .counter
+            font-size: 3rem
+            font-weight: 600
+
+        .fa
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-115%, -60%)
+            font-size: 4rem
+            opacity: .15
+
+        h1
+            font-size: 1.3rem
+            font-weight: 400
+            text-transform: uppercase
+
+
+//prev-project
+.prev-project
+    position: relative
+    padding: 4rem 0
+
+    .project-title
+        text-align: center
+        max-width: 800px
+        margin: auto
+
+        h4
+            color: rgb(0, 0, 255)
+            display: block
+            text-transform: uppercase
+            margin-bottom: 8px
+            font-size: 15px
+            font-weight: 600
+
+        h1
+            max-width: 560px
+            font-weight: 800
+            font-size: 40px
+            margin-top: 0
+            margin-left: auto
+            margin-right: auto
+            margin-bottom: 0
+            font-family: "Default"
+
+    
+    .project-sliders
+        margin-top: 2rem
+
+    .project-card
+        position: relative
+        overflow: hidden
+        cursor: pointer
+
+        &:hover img
+           
+            transform: scale(1.2)
+
+        &:hover .plus-sign
+            transform: scale(1)
+
+        .plus-sign
+            position: absolute
+            top: 10px
+            right: 10px
+            height: 80px
+            width: 80px
+            background-color: #0873ff
+            border-radius: 50%
+            transform: scale(0)
+            transition: .3s
+            z-index: 1
+
+            &::before
+                content: ""
+                position: absolute
+                height: 70%
+                top: 13px
+                width: 2px
+                left: 50%
+                background-color: rgb(255, 255, 255)
+                
+
+            &::after
+                content: ""
+                position: absolute
+                height: 2px
+                top: 50%
+                width: 70%
+                left: 13px
+                background-color: rgb(255, 255, 255)
+
+        img
+            transition: .3s
+            width: 100%
+
+        &:hover .project-text
+            left: 0
+
+        .project-text
+            position: absolute
+            bottom: 40px
+            left: -100%
+            background-color: rgb(255, 255, 255)
+            z-index: 1
+            width: 85%
+            padding: .75rem 1rem
+            transition: .3s
+
+            h1
+                margin-top: 0
+                margin-bottom: .5rem
+                font-size: 1.2rem
+                font-weight: 500
+                color: #455f77
+
+            p
+                margin-top: 0
+                margin-bottom: 0
+
+
+
+//contact
+.contact
+    padding-top: 3rem
+    padding-bottom: 3rem
+    
+    .contact-title
+        font-size: 2.7rem
+        font-weight: 500
+        text-align: center
+        display: block
+    
+    [data-send-title]
+        font-weight: 400
+        font-size: 1.2rem
+
+    form
+        input,
+        textarea
+            border: 1px solid #d1d5da
+            padding: .5rem 1.25rem
+            transition: .25s
+            border-radius: .25rem
+
+            &:focus
+                outline: 0
+                box-shadow: 0 0 0 0.2rem #088dff26
+                border-color: rgba(8, 141, 255, 0.98)
+
+        .name-input
+            display: flex
+            align-items: center
+            justify-content: space-between
+            margin-bottom: 1rem
+
+            input   
+                flex: 0 0 49%
+
+        input[type="email"]
+                width: 100%
+                margin-bottom: 1rem
+
+        textarea
+            width: 100%
+            min-height: 200px
+
+        .send-msg
+            color: #fff
+            border: none
+            padding: .5rem 1.5rem
+            margin-top: 1rem
+            min-width: 120px
+            background-image: linear-gradient(to right, rgb(37, 170, 225), rgb(68, 129, 235), rgb(4, 190, 254), rgb(63, 134, 237))
+            background-size: 300% 100%
+            cursor: pointer
+
+            &:focus
+                outline: 0
+
+    .contact-right
+        box-shadow: 0 0 8px #e9edf3a3
+        border-radius: .25rem
+        padding: 2rem
+
+        .contact-right-title
+            text-align: center
+            margin-bottom: 2rem
+            color: #007bff
+            font-weight: 500
+
+        .contact-mini-card
+            display: flex
+            align-items: center
+            justify-content: flex-start
+            margin-bottom: 1rem
+
+            i.fa
+                font-size: 1.7rem
+                height: 50px
+                width: 50px
+                margin-right: 1rem
+
+                &.fa-map-marker
+                    color: rgb(220, 222, 78)
+                &.fa-envelope
+                    color: $m-orange
+                &.fa-phone
+                    color: rgb(25, 226, 226)
+
+            h1  
+                margin-top: 0
+                margin-bottom: .5rem
+                font-size: 1.5rem
+                font-weight: 400
+
+            p   
+                margin-bottom: 0
+                margin-top: 0
+                color: #8a95a3
+
+        .social-icons
+            ul
+                padding-left: 0
+                display: flex
+                justify-content: flex-end
+
+                a
+                    display: block
+                    height: 30px
+                    width: 30px
+                    border-radius: 50%
+                    color: #000
+                    border: 1px solid #d1d5da
+                    text-align: center
+                    margin-left: 1rem
+
+                    i
+                        line-height: 30px
+
+                    .fa-facebook
+                        color: #007bff
+                    .fa-twitter
+                        color: rgb(8, 209, 255)
+                    .fa-envelope
+                        color: $m-orange
+
+
+
+//footer
+.footer
+    position: relative
+    background-color: #0f1216
+    padding: 1rem
+    
+    p
+        font-size: 1rem
+        color: #fff
+        text-align: center
+            
+        span
+            color: #ffcf90
+            text-transform: uppercase

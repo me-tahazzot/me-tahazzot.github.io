@@ -1,0 +1,121 @@
+/****
+ *
+ * @primary_css
+ *
+ * This is the main primary css file for the project, This file is
+ * mainly created for reset some css settings and add some
+ * extra features for the project
+ * 
+ */
+
+*,
+*::before,
+*::after
+    box-sizing: border-box
+
+html
+    -ms-text-size-adjust: 100%
+    -webkit-text-size-adjust: 100%
+    -webkit-tap-highlight-color: rgba(0,0,0,0)
+
+body
+    margin: 0
+    color: rgb(64, 69, 74) !important
+    font-family: "Sans-serif", Segoe UI, Helvetica, Arial
+    font-size: 1rem
+    font-weight: 400
+    line-height: 1.5
+    text-align: left
+
+
+header,
+footer,
+aside,
+figure,
+figcaption,
+aside,
+section,
+div,
+hgroup,
+main,
+nav
+    display: block
+
+button,
+input,
+select,
+a,
+textarea
+    font-family: inherit
+    font-size: inherit 
+
+a
+    text-decoration: none
+    color: #007bff
+    -webkit-tap-highlight-color: transparent
+
+    &:hover
+        text-decoration: underline
+
+
+ul,
+ol
+    margin-top: 0
+    margin-bottom: 1rem
+
+ul ul,
+ul ol,
+ol ol,
+ol ul
+    margin-bottom: 0
+
+small
+    font-size: 80%
+
+code
+    font-family: monospace
+    background-color: #f1f1f1
+    color: rgb(80, 80, 80)
+    padding: .25rem .5rem
+
+/******
+ *
+ * @important_classes
+ */
+.container
+    width: 100%
+    max-width: 1000px
+    padding-left: 15px
+    padding-right: 15px
+    margin-left: auto
+    margin-right: auto
+
+@media screen and (max-width: 1199.98px)
+    //for large screen
+    .container  
+        max-width: 1000px
+
+@media screen and ( max-width: 991.98px )
+    //for medium screen
+    .container  
+        max-width: 920px
+
+@media screen and (max-width: 767.98px)
+    //for small device
+    .container
+        max-width: 720px
+
+@media screen and (max-width: 551.98px)
+    //for xtra small
+    .container  
+        max-width: 95%
+    
+
+/*****
+ *
+ * @get
+ * here we will call all the components
+ * for this site
+ */
+
+@import ../src/grid
